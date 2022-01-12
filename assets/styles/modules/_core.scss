@@ -1,0 +1,219 @@
+
+/* = = = = = = = = = = = = = = = =
+// SETTING BREAKPOINTS
+ = = = = = = = = = = = = = = = = */
+
+ $breakpoints: (
+  'sm': 'screen and (max-width: 460px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 960px)',
+  'xl': 'screen and (max-width: 1280px)',
+) !default;
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+$Key: #5f6165;
+$Nvy: rgb(4, 30, 65);
+$Kro: #222;
+$Gry: rgb(95,97,101);
+$LGry: rgb(241,242,244) ;
+$Btn: #595757 ;
+
+$background: #FFE200;
+
+/* = = = = = = = = = = = = = = = =
+// INCLUDE FONTS
+ = = = = = = = = = = = = = = = = */
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: otf ttf) {
+  $src: null;
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $format: map-get($formats, $ext);
+    $src: append($src, url(quote($path)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style:  $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+@include font-face('Oswald-ExtraLight', '../fonts/Oswald-ExtraLight.ttf', 200, null, ttf otf);
+@include font-face('Oswald-Light', '../fonts/Oswald-Light.ttf', 300, null, ttf otf);
+@include font-face('Oswald-Regular', '../fonts/Oswald-Regular.ttf', 400, null, ttf);
+.oswald-ex{
+	font-family: 'Oswald-ExtraLight';
+	font-weight: 200;
+}
+.oswald-lt{
+	font-family: 'Oswald-Light';
+	font-weight: 300;
+}
+.oswald-rg{
+	font-family: 'Oswald-Regular';
+	font-weight: 400;
+}
+
+$hiraSans: 'Hiragino Sans' , "ヒラギノ角ゴシック" , "Yu Gothic", "游ゴシック", 'YuGothic', "游ゴシック体", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+.hiraSans{
+	font-family: $hiraSans;
+}
+
+.uppercase{
+	text-transform: uppercase;
+}
+.lowercase{
+	text-transform: lowercase;
+}
+
+
+// Decorations
+@mixin inputText{
+	height:r(80px);
+	background:$cInput;
+	border:none;
+}
+@mixin button{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-width:r(150px);
+	height:r(40px);
+	padding:0 r(15px);
+	color:white;
+	background:$cBase;
+	border-radius:r(5px);
+	border:none;
+	outline:0;
+	&:hover{
+		color:white !important;
+	}
+}
+@mixin card{
+	display:block;
+	background:white;
+	border-radius:r(10px);box-shadow:0 r(2px) r(8px) 0 rgba(104,85,58,0.3);}
+@mixin cardHover{box-shadow:0 0 r(20px) 0 rgba(64,128,255,1)}
+@mixin anime{transition: all 0.25s ease-out;}
+
+
+// Layouts
+
+
+
+// Colors
+$cBase:rgba(32,32,32,1);
+$cBasePl:rgba(32,32,32,0.1);
+$cBaseLt:rgba(32,32,32,0.3);
+$cBaseSf:rgba(32,32,32,0.5);
+@function cBase($opacity){
+	@return rgba(32,32,32,$opacity / 100);
+}
+
+$cKey:rgba(0,128,237,1);
+$cKeyDp:rgba(0,108,227,1);
+@function cKey($opacity){
+	@return rgba(0,128,237,$opacity / 100);
+}
+
+$cAccent:rgba(208,32,96,1);
+
+$cGrayPl:rgb(248,248,246);
+$cGrayLt:rgb(232,232,232);
+$cGray:rgb(224,224,224);
+@function cGray($opacity){
+	@return rgba(224,224,224,$opacity / 100);
+}
+
+
+$cLink:rgba(250,240,200,1);
+$cHover:rgba(248,248,248,1);
+$cInput:rgba(104,85,58,0.1);
+
+$cCampaign:rgba(250,128,180,1);
+
+
+
+// Fonts
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjp.css');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Upright');
+$sans:'Noto Sans JP',sans-serif;
+$serif:'Cormorant Upright',serif;
+$Nsans: 'Nunito Sans';
+
+.font-nsans{
+	font-family: '$Nsans';
+}
+
+
+// Interaction
+
+
+
+// Animation
+a,input[tyle="checkbox"] + label{
+	transition:all 0.25s ease;
+}
+@mixin fadeIn{
+	animation: fadeIn 2s ease 0s 1 normal;
+}
+@keyframes fadeIn{
+	0%{opacity:0}
+	100%{opacity:1}
+}
+@-webkit-keyframes fadeIn {
+	0%{opacity:0}
+	100%{opacity:1}
+}
+
+// scroll animation
+@keyframes sdl {
+  0% {
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+  }
+  50% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+  50.1% {
+    transform: scale(1, 1);
+    transform-origin: 0 100%;
+  }
+  100% {
+    transform: scale(1, 0);
+    transform-origin: 0 100%;
+  }
+}
+
+// 文字選択した箇所のスタイル
+::selection {
+	background: #222; /*背景色*/
+	color: #fff; /*文字色*/
+}
+::-moz-selection {
+	background: #222; /*背景色*/
+	color: #fff; /*文字色*/
+}
+
+
+/* = = = = = = = = = = = = = = = =
+// USE microCMS
+ = = = = = = = = = = = = = = = = */
+ .code{
+	padding: 1rem 2rem;
+	border-radius: .5rem;
+ }
