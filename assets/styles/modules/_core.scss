@@ -1,7 +1,4 @@
-
-/* = = = = = = = = = = = = = = = =
 // SETTING BREAKPOINTS
- = = = = = = = = = = = = = = = = */
 
  $breakpoints: (
   'sm': 'screen and (max-width: 460px)',
@@ -18,22 +15,13 @@
 @mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
   transition: $property $duration $ease;
 }
-$Key: #5f6165;
-$Nvy: rgb(4, 30, 65);
-$Kro: #222;
-$Gry: rgb(95,97,101);
-$LGry: rgb(241,242,244) ;
-$Btn: #595757 ;
+$KeyColor: #5f6165;
 
-$background: #FFE200;
 
-/* = = = = = = = = = = = = = = = =
-// INCLUDE FONTS
- = = = = = = = = = = = = = = = = */
+// SETTING FONTS
 
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: otf ttf) {
   $src: null;
-
   $formats: (
     otf: "opentype",
     ttf: "truetype"
@@ -45,33 +33,15 @@ $background: #FFE200;
   }
 
   @font-face {
-    font-family: quote($name);
-    font-style:  $style;
     font-weight: $weight;
+    font-style:  $style;
+    font-family: quote($name);
     src: $src;
   }
 }
 @include font-face('Oswald-ExtraLight', '../fonts/Oswald-ExtraLight.ttf', 200, null, ttf otf);
 @include font-face('Oswald-Light', '../fonts/Oswald-Light.ttf', 300, null, ttf otf);
 @include font-face('Oswald-Regular', '../fonts/Oswald-Regular.ttf', 400, null, ttf);
-.oswald-ex{
-	font-family: 'Oswald-ExtraLight';
-	font-weight: 200;
-}
-.oswald-lt{
-	font-family: 'Oswald-Light';
-	font-weight: 300;
-}
-.oswald-rg{
-	font-family: 'Oswald-Regular';
-	font-weight: 400;
-}
-
-$hiraSans: 'Hiragino Sans' , "ヒラギノ角ゴシック" , "Yu Gothic", "游ゴシック", 'YuGothic', "游ゴシック体", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-.hiraSans{
-	font-family: $hiraSans;
-}
-
 .uppercase{
 	text-transform: uppercase;
 }
@@ -80,37 +50,34 @@ $hiraSans: 'Hiragino Sans' , "ヒラギノ角ゴシック" , "Yu Gothic", "游�
 }
 
 
-// Decorations
+// SETTING DECORATIONS
 @mixin inputText{
 	height:r(80px);
-	background:$cInput;
 	border:none;
+	background:$cInput;
 }
 @mixin button{
 	display:flex;
-	justify-content:center;
 	align-items:center;
+	justify-content:center;
+	padding:0 r(15px);
 	min-width:r(150px);
 	height:r(40px);
-	padding:0 r(15px);
-	color:white;
-	background:$cBase;
-	border-radius:r(5px);
-	border:none;
 	outline:0;
+	border:none;
+	border-radius:r(5px);
+	background:$cBase;
+	color:white;
 	&:hover{
 		color:white !important;
 	}
 }
 @mixin card{
 	display:block;
-	background:white;
-	border-radius:r(10px);box-shadow:0 r(2px) r(8px) 0 rgba(104,85,58,0.3);}
+	border-radius:r(10px);
+	background:white;box-shadow:0 r(2px) r(8px) 0 rgba(104,85,58,0.3);}
 @mixin cardHover{box-shadow:0 0 r(20px) 0 rgba(64,128,255,1)}
 @mixin anime{transition: all 0.25s ease-out;}
-
-
-// Layouts
 
 
 
@@ -144,23 +111,6 @@ $cHover:rgba(248,248,248,1);
 $cInput:rgba(104,85,58,0.1);
 
 $cCampaign:rgba(250,128,180,1);
-
-
-
-// Fonts
-@import url('https://fonts.googleapis.com/earlyaccess/notosansjp.css');
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Upright');
-$sans:'Noto Sans JP',sans-serif;
-$serif:'Cormorant Upright',serif;
-$Nsans: 'Nunito Sans';
-
-.font-nsans{
-	font-family: '$Nsans';
-}
-
-
-// Interaction
-
 
 
 // Animation
@@ -208,12 +158,3 @@ a,input[tyle="checkbox"] + label{
 	background: #222; /*背景色*/
 	color: #fff; /*文字色*/
 }
-
-
-/* = = = = = = = = = = = = = = = =
-// USE microCMS
- = = = = = = = = = = = = = = = = */
- .code{
-	padding: 1rem 2rem;
-	border-radius: .5rem;
- }

@@ -1,47 +1,20 @@
 @charset "UTF-8";
-/* = = = = = = = = = = = = = = = =
-// SETTING BREAKPOINTS
- = = = = = = = = = = = = = = = = */
-/* = = = = = = = = = = = = = = = =
-// INCLUDE FONTS
- = = = = = = = = = = = = = = = = */
-@import url("https://fonts.googleapis.com/earlyaccess/notosansjp.css");
-@import url("https://fonts.googleapis.com/css?family=Cormorant+Upright");
 @font-face {
-  font-family: "Oswald-ExtraLight";
   font-weight: 200;
+  font-family: "Oswald-ExtraLight";
   src: url("../fonts/Oswald-ExtraLight.ttf") format("truetype"), url("../fonts/Oswald-ExtraLight.ttf") format("opentype");
 }
 
 @font-face {
-  font-family: "Oswald-Light";
   font-weight: 300;
+  font-family: "Oswald-Light";
   src: url("../fonts/Oswald-Light.ttf") format("truetype"), url("../fonts/Oswald-Light.ttf") format("opentype");
 }
 
 @font-face {
+  font-weight: 400;
   font-family: "Oswald-Regular";
-  font-weight: 400;
   src: url("../fonts/Oswald-Regular.ttf") format("truetype");
-}
-
-.oswald-ex {
-  font-family: 'Oswald-ExtraLight';
-  font-weight: 200;
-}
-
-.oswald-lt {
-  font-family: 'Oswald-Light';
-  font-weight: 300;
-}
-
-.oswald-rg {
-  font-family: 'Oswald-Regular';
-  font-weight: 400;
-}
-
-.hiraSans {
-  font-family: "Hiragino Sans", "ヒラギノ角ゴシック", "Yu Gothic", "游ゴシック", "YuGothic", "游ゴシック体", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
 .uppercase {
@@ -50,10 +23,6 @@
 
 .lowercase {
   text-transform: lowercase;
-}
-
-.font-nsans {
-  font-family: '$Nsans';
 }
 
 a, input[tyle="checkbox"] + label {
@@ -109,12 +78,4 @@ a, input[tyle="checkbox"] + label {
   /*背景色*/
   color: #fff;
   /*文字色*/
-}
-
-/* = = = = = = = = = = = = = = = =
-// USE microCMS
- = = = = = = = = = = = = = = = = */
-.code {
-  padding: 1rem 2rem;
-  border-radius: .5rem;
 }
