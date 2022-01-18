@@ -76,3 +76,20 @@ body {
     text-align: center;
   }
 }
+
+// 文字選択した箇所のスタイル
+::selection {
+	background: #222; /*背景色*/
+	color: #fff; /*文字色*/
+}
+::-moz-selection {
+	background: #222; /*背景色*/
+	color: #fff; /*文字色*/
+}
+
+// ダークモード用スタイル
+@media screen and (prefers-color-scheme: dark) {
+  body{
+
+  }
+}

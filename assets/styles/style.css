@@ -636,3 +636,17 @@ body::-webkit-scrollbar {
   justify-content: center;
   text-align: center;
 }
+
+::selection {
+  background: #222;
+  /*背景色*/
+  color: #fff;
+  /*文字色*/
+}
+
+::-moz-selection {
+  background: #222;
+  /*背景色*/
+  color: #fff;
+  /*文字色*/
+}
